@@ -1,0 +1,57 @@
+[
+  {
+    "id": "macka",
+    "word_lat": "MAČKA",
+    "word_cyr": "МАЧКА",
+    "phonemes": ["M", "A", "Č", "K", "A"],
+    "vowels_idx": [1, 4],
+    "image": "/src/assets/macka.png",
+    "initial": { "lat": "M", "cyr": "М" },
+    "syllables": ["MA", "ČKA"],
+    "category": "animals"
+  },
+  {
+    "id": "jaje",
+    "word_lat": "JAJE",
+    "word_cyr": "ЈАЈЕ",
+    "phonemes": ["J", "A", "J", "E"],
+    "vowels_idx": [1, 3],
+    "image": "/src/assets/jaje.png",
+    "initial": { "lat": "J", "cyr": "Ј" },
+    "syllables": ["JA", "JE"],
+    "category": "food"
+  },
+  {
+    "id": "pas",
+    "word_lat": "PAS",
+    "word_cyr": "ПАС",
+    "phonemes": ["P", "A", "S"],
+    "vowels_idx": [1],
+    "image": "/src/assets/pas.png",
+    "initial": { "lat": "P", "cyr": "П" },
+    "syllables": ["PAS"],
+    "category": "animals"
+  },
+  {
+    "id": "jabuka",
+    "word_lat": "JABUKA",
+    "word_cyr": "ЈАБУКА",
+    "phonemes": ["J", "A", "B", "U", "K", "A"],
+    "vowels_idx": [1, 3, 5],
+    "image": "/src/assets/jabuka.png",
+    "initial": { "lat": "J", "cyr": "Ј" },
+    "syllables": ["JA", "BU", "KA"],
+    "category": "food"
+  },
+  {
+    "id": "sunce",
+    "word_lat": "SUNCE",
+    "word_cyr": "СУНЦЕ",
+    "phonemes": ["S", "U", "N", "C", "E"],
+    "vowels_idx": [1, 4],
+    "image": "/src/assets/sunce.png",
+    "initial": { "lat": "S", "cyr": "С" },
+    "syllables": ["SUN", "CE"],
+    "category": "nature"
+  }
+]
