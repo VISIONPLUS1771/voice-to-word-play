@@ -6,117 +6,144 @@
 All colors MUST be HSL.
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+
 @layer base {
   :root {
-    /* Playful child-friendly color palette */
-    --background: 45 100% 97%;
-    --foreground: 225 15% 15%;
+    /* Vibrant child-friendly color palette */
+    --background: 45 100% 98%;
+    --foreground: 230 25% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 225 15% 15%;
+    --card-foreground: 230 25% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 225 15% 15%;
+    --popover-foreground: 230 25% 18%;
 
-    /* Primary: Bright blue for main actions */
-    --primary: 220 90% 56%;
+    /* Primary: Vibrant sky blue */
+    --primary: 205 100% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 220 90% 70%;
+    --primary-glow: 205 100% 65%;
+    --primary-soft: 205 100% 95%;
 
-    /* Secondary: Warm purple for secondary actions */
-    --secondary: 280 60% 65%;
+    /* Secondary: Playful purple */
+    --secondary: 270 75% 60%;
     --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 270 75% 75%;
 
-    /* Success: Fresh green for correct answers */
-    --success: 145 70% 55%;
+    /* Success: Fresh vibrant green */
+    --success: 145 80% 45%;
     --success-foreground: 0 0% 100%;
-    --success-glow: 145 70% 70%;
+    --success-glow: 145 80% 60%;
 
-    /* Warning: Orange for hints and warnings */
-    --warning: 35 90% 60%;
+    /* Warning: Sunny orange */
+    --warning: 38 100% 55%;
     --warning-foreground: 0 0% 100%;
 
-    /* Muted: Soft grays */
-    --muted: 220 15% 95%;
-    --muted-foreground: 220 10% 45%;
-
-    --accent: 320 70% 60%;
+    /* Accent: Playful pink/magenta */
+    --accent: 330 80% 60%;
     --accent-foreground: 0 0% 100%;
+    --accent-glow: 330 80% 75%;
 
-    --destructive: 0 75% 60%;
+    /* Muted: Soft warm grays */
+    --muted: 40 30% 96%;
+    --muted-foreground: 230 10% 50%;
+
+    --destructive: 0 85% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 88%;
-    --input: 220 15% 88%;
-    --ring: 220 90% 56%;
+    --border: 40 25% 88%;
+    --input: 40 25% 88%;
+    --ring: 205 100% 50%;
 
     /* Game-specific colors */
-    --token-black: 225 15% 25%;
-    --token-yellow: 45 95% 65%;
-    --token-red: 355 85% 60%;
+    --token-black: 230 30% 25%;
+    --token-yellow: 48 100% 55%;
+    --token-red: 355 90% 55%;
+
+    /* Player colors */
+    --player-1: 205 100% 50%;
+    --player-2: 330 80% 60%;
+    --player-3: 145 80% 45%;
+    --player-4: 38 100% 55%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(var(--success-glow)));
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(45 50% 98%));
-    --gradient-background: linear-gradient(135deg, hsl(var(--background)), hsl(220 30% 98%));
+    --gradient-primary: linear-gradient(135deg, hsl(205 100% 50%), hsl(205 100% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(270 75% 60%), hsl(330 80% 60%));
+    --gradient-success: linear-gradient(135deg, hsl(145 80% 45%), hsl(160 70% 55%));
+    --gradient-warning: linear-gradient(135deg, hsl(38 100% 55%), hsl(45 100% 65%));
+    --gradient-accent: linear-gradient(135deg, hsl(330 80% 60%), hsl(280 70% 65%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(45 60% 98%));
+    --gradient-background: linear-gradient(135deg, hsl(45 100% 98%), hsl(205 60% 97%));
+    --gradient-rainbow: linear-gradient(90deg, 
+      hsl(355 90% 55%), 
+      hsl(38 100% 55%), 
+      hsl(48 100% 55%), 
+      hsl(145 80% 45%), 
+      hsl(205 100% 50%), 
+      hsl(270 75% 60%));
 
     /* Shadows */
-    --shadow-card: 0 8px 32px hsl(var(--primary) / 0.15);
-    --shadow-hover: 0 12px 40px hsl(var(--primary) / 0.25);
-    --shadow-success: 0 8px 32px hsl(var(--success) / 0.25);
+    --shadow-card: 0 8px 32px hsl(205 100% 50% / 0.12), 0 4px 16px hsl(0 0% 0% / 0.05);
+    --shadow-hover: 0 16px 48px hsl(205 100% 50% / 0.2), 0 8px 24px hsl(0 0% 0% / 0.08);
+    --shadow-success: 0 8px 32px hsl(145 80% 45% / 0.25);
+    --shadow-glow: 0 0 40px hsl(205 100% 65% / 0.4);
+    --shadow-inset: inset 0 2px 4px hsl(0 0% 0% / 0.06);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 230 25% 8%;
+    --foreground: 45 30% 96%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 230 25% 12%;
+    --card-foreground: 45 30% 96%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 230 25% 12%;
+    --popover-foreground: 45 30% 96%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 205 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 205 100% 70%;
+    --primary-soft: 205 50% 20%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 270 75% 65%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 230 20% 18%;
+    --muted-foreground: 230 15% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 330 80% 65%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 230 20% 22%;
+    --input: 230 20% 22%;
+    --ring: 205 100% 55%;
+
+    --gradient-card: linear-gradient(145deg, hsl(230 25% 14%), hsl(230 25% 10%));
+    --gradient-background: linear-gradient(135deg, hsl(230 25% 8%), hsl(230 30% 5%));
+
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.3);
+    --shadow-hover: 0 16px 48px hsl(0 0% 0% / 0.4);
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -133,74 +160,126 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    font-family: 'Nunito', sans-serif;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
     background: var(--gradient-background);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
   }
 }
 
 @layer components {
   /* Game Board Styles */
   .game-board-3x3 {
-    @apply grid grid-cols-3 gap-3 p-4 bg-card rounded-2xl;
+    @apply grid grid-cols-3 gap-4 p-6 bg-card rounded-3xl;
+    background: var(--gradient-card);
     box-shadow: var(--shadow-card);
   }
   
   .game-board-6x10 {
-    @apply grid grid-cols-10 gap-2 p-4 bg-card rounded-2xl;
+    @apply grid grid-cols-10 gap-2 p-5 bg-card rounded-3xl;
+    background: var(--gradient-card);
     box-shadow: var(--shadow-card);
   }
   
   .board-cell {
-    @apply aspect-square rounded-xl border-2 border-dashed border-muted-foreground/30 
-           flex items-center justify-center transition-all duration-300
-           hover:border-primary/50 hover:bg-primary/5;
+    @apply aspect-square rounded-2xl border-2 border-dashed border-muted-foreground/25 
+           flex items-center justify-center cursor-pointer
+           hover:border-primary/60 hover:bg-primary/5 hover:scale-105
+           active:scale-95;
+    transition: var(--transition-spring);
   }
   
   .board-cell-filled {
-    @apply border-solid border-primary bg-primary/10;
+    @apply border-solid border-primary/40 bg-primary/10;
+    box-shadow: var(--shadow-inset);
   }
   
-  /* Card Styles */
+  .board-cell-winning {
+    @apply border-success bg-success/20;
+    animation: pulse-success 1s ease-in-out infinite;
+  }
+  
+  /* Word Card Styles */
   .word-card {
-    @apply bg-card rounded-2xl p-4 cursor-pointer transition-all duration-300
-           border-2 border-transparent hover:border-primary/50;
+    @apply bg-card rounded-3xl p-5 cursor-pointer 
+           border-2 border-transparent hover:border-primary/40;
     background: var(--gradient-card);
     box-shadow: var(--shadow-card);
     transition: var(--transition-smooth);
   }
   
   .word-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px) scale(1.02);
     box-shadow: var(--shadow-hover);
   }
   
+  .word-card-selected {
+    @apply border-primary ring-4 ring-primary/30;
+    transform: scale(1.05);
+  }
+  
   .word-card-dragging {
-    @apply opacity-50 scale-95;
-    transform: rotate(5deg);
+    @apply opacity-70 scale-95 rotate-3;
   }
   
   /* Token Styles */
   .token {
-    @apply w-8 h-8 rounded-full cursor-pointer transition-all duration-300
-           border-2 border-white/50 shadow-lg hover:scale-110;
+    @apply w-10 h-10 rounded-full cursor-pointer
+           border-2 border-white/60 shadow-lg;
+    transition: var(--transition-spring);
   }
   
-  .token-black { background: hsl(var(--token-black)); }
-  .token-yellow { background: hsl(var(--token-yellow)); }
-  .token-red { background: hsl(var(--token-red)); }
+  .token:hover {
+    transform: scale(1.15);
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .token:active {
+    transform: scale(0.95);
+  }
+  
+  .token-black { 
+    background: linear-gradient(145deg, hsl(230 30% 30%), hsl(230 30% 20%));
+  }
+  .token-yellow { 
+    background: linear-gradient(145deg, hsl(48 100% 60%), hsl(45 100% 50%));
+  }
+  .token-red { 
+    background: linear-gradient(145deg, hsl(355 90% 60%), hsl(355 90% 50%));
+  }
+  
+  .token-selected {
+    @apply ring-4 ring-primary scale-110;
+    animation: token-pulse 1.5s ease-in-out infinite;
+  }
   
   /* Button Variants */
   .btn-game {
-    @apply px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300
-           transform hover:scale-105 active:scale-95;
+    @apply px-8 py-4 rounded-2xl font-bold text-lg 
+           transform shadow-lg border-0;
+    font-family: 'Fredoka', sans-serif;
     background: var(--gradient-primary);
     color: hsl(var(--primary-foreground));
-    box-shadow: var(--shadow-card);
+    box-shadow: var(--shadow-card), inset 0 1px 0 hsl(0 0% 100% / 0.2);
+    transition: var(--transition-spring);
   }
   
   .btn-game:hover {
+    transform: translateY(-3px) scale(1.02);
     box-shadow: var(--shadow-hover);
+  }
+  
+  .btn-game:active {
+    transform: translateY(1px) scale(0.98);
   }
   
   .btn-success {
@@ -208,42 +287,132 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-success);
   }
   
+  .btn-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .btn-accent {
+    background: var(--gradient-accent);
+  }
+  
   /* TTS Button */
   .tts-button {
     @apply w-12 h-12 rounded-full flex items-center justify-center
-           transition-all duration-300 hover:scale-110 active:scale-95;
+           shadow-lg border-0;
     background: var(--gradient-primary);
     color: hsl(var(--primary-foreground));
+    transition: var(--transition-spring);
   }
   
-  /* Animations */
-  .animate-bounce-in {
-    animation: bounceIn 0.6s var(--transition-bounce);
+  .tts-button:hover {
+    transform: scale(1.15);
+    box-shadow: var(--shadow-glow);
   }
   
-  .animate-shake {
-    animation: shake 0.5s ease-in-out;
+  .tts-button:active {
+    transform: scale(0.9);
   }
   
-  .animate-success {
-    animation: success 0.8s ease-out;
+  /* Level Badge */
+  .level-badge {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-full 
+           font-bold text-sm;
+    font-family: 'Fredoka', sans-serif;
   }
   
+  .level-badge-active {
+    background: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--shadow-card);
+  }
+  
+  /* Player Card */
+  .player-card {
+    @apply bg-card rounded-2xl p-4 shadow-lg border-2 border-transparent;
+    background: var(--gradient-card);
+    transition: var(--transition-smooth);
+  }
+  
+  .player-card-active {
+    @apply border-primary/50;
+    box-shadow: var(--shadow-hover);
+    animation: player-glow 2s ease-in-out infinite;
+  }
+  
+  /* Game Container */
+  .game-container {
+    @apply bg-card/50 backdrop-blur-sm rounded-3xl p-6 shadow-lg;
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+  
+  /* Progress indicator */
+  .progress-ring {
+    @apply relative w-16 h-16;
+  }
+  
+  .progress-ring svg {
+    transform: rotate(-90deg);
+  }
+  
+  /* Letter highlight */
   .letter-highlight {
-    @apply text-warning bg-warning/20 px-2 py-1 rounded-lg animate-pulse;
+    @apply inline-block px-3 py-1 rounded-xl font-bold;
+    background: var(--gradient-warning);
+    color: hsl(var(--warning-foreground));
+    animation: letter-pop 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  /* Achievement badge */
+  .achievement-badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full 
+           font-bold text-sm shadow-lg;
+    background: var(--gradient-rainbow);
+    background-size: 200% auto;
+    color: white;
+    animation: rainbow-shift 3s linear infinite;
+  }
+  
+  /* Floating animation for mascots/decorations */
+  .floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+  
+  /* Sparkle effect */
+  .sparkle {
+    position: relative;
+  }
+  
+  .sparkle::before,
+  .sparkle::after {
+    content: '✨';
+    position: absolute;
+    animation: sparkle-float 2s ease-in-out infinite;
+  }
+  
+  .sparkle::before {
+    top: -10px;
+    left: 10%;
+    animation-delay: 0s;
+  }
+  
+  .sparkle::after {
+    top: -5px;
+    right: 15%;
+    animation-delay: 0.5s;
   }
 }
 
+/* Animations */
 @keyframes bounceIn {
   0% {
     opacity: 0;
     transform: scale(0.3);
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1.08);
   }
   70% {
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
   100% {
     opacity: 1;
@@ -253,12 +422,109 @@ All colors MUST be HSL.
 
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
-  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-  20%, 40%, 60%, 80% { transform: translateX(5px); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-6px); }
+  20%, 40%, 60%, 80% { transform: translateX(6px); }
 }
 
 @keyframes success {
   0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
+  25% { transform: scale(1.15) rotate(-3deg); }
+  50% { transform: scale(1.2) rotate(3deg); }
+  75% { transform: scale(1.1) rotate(-2deg); }
+  100% { transform: scale(1) rotate(0); }
 }
+
+@keyframes pulse-success {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 hsl(var(--success) / 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 0 12px hsl(var(--success) / 0);
+  }
+}
+
+@keyframes token-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 0 8px hsl(var(--primary) / 0);
+  }
+}
+
+@keyframes player-glow {
+  0%, 100% {
+    box-shadow: var(--shadow-card);
+  }
+  50% {
+    box-shadow: var(--shadow-hover), 0 0 20px hsl(var(--primary) / 0.3);
+  }
+}
+
+@keyframes letter-pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes rainbow-shift {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+@keyframes sparkle-float {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(0) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-15px) scale(1);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+@keyframes celebrate {
+  0% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.1) rotate(-10deg); }
+  50% { transform: scale(1.2) rotate(0deg); }
+  75% { transform: scale(1.1) rotate(10deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+/* Animation utilities */
+.animate-bounce-in { animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+.animate-shake { animation: shake 0.5s ease-in-out; }
+.animate-success { animation: success 0.8s ease-out; }
+.animate-wiggle { animation: wiggle 0.5s ease-in-out; }
+.animate-celebrate { animation: celebrate 1s ease-in-out; }
+.animate-float { animation: floating 3s ease-in-out infinite; }
+
+/* Stagger animations for lists */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }

@@ -1,4 +1,7 @@
+import tailwindConfig from "../../tailwind.config";
 import type { Config } from "tailwindcss";
+
+const config = tailwindConfig as Config;
 
 export default {
 	darkMode: ["class"],
@@ -18,6 +21,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'display': ['Fredoka', 'sans-serif'],
+				'body': ['Nunito', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -27,11 +34,13 @@ export default {
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))',
-					glow: 'hsl(var(--primary-glow))'
+					glow: 'hsl(var(--primary-glow))',
+					soft: 'hsl(var(--primary-soft))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					foreground: 'hsl(var(--secondary-foreground))',
+					glow: 'hsl(var(--secondary-glow))'
 				},
 				success: {
 					DEFAULT: 'hsl(var(--success))',
@@ -52,7 +61,8 @@ export default {
 				},
 				accent: {
 					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+					foreground: 'hsl(var(--accent-foreground))',
+					glow: 'hsl(var(--accent-glow))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -66,6 +76,12 @@ export default {
 					black: 'hsl(var(--token-black))',
 					yellow: 'hsl(var(--token-yellow))',
 					red: 'hsl(var(--token-red))'
+				},
+				player: {
+					1: 'hsl(var(--player-1))',
+					2: 'hsl(var(--player-2))',
+					3: 'hsl(var(--player-3))',
+					4: 'hsl(var(--player-4))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -81,29 +97,50 @@ export default {
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'calc(var(--radius) - 4px)',
+				'2xl': 'calc(var(--radius) * 1.5)',
+				'3xl': 'calc(var(--radius) * 2)'
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'scale-in': {
+					'0%': { transform: 'scale(0.95)', opacity: '0' },
+					'100%': { transform: 'scale(1)', opacity: '1' }
+				},
+				'bounce-in': {
+					'0%': { transform: 'scale(0.3)', opacity: '0' },
+					'50%': { transform: 'scale(1.05)' },
+					'70%': { transform: 'scale(0.9)' },
+					'100%': { transform: 'scale(1)', opacity: '1' }
+				},
+				'wiggle': {
+					'0%, 100%': { transform: 'rotate(-3deg)' },
+					'50%': { transform: 'rotate(3deg)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'scale-in': 'scale-in 0.2s ease-out',
+				'bounce-in': 'bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+				'wiggle': 'wiggle 0.3s ease-in-out',
+				'float': 'float 3s ease-in-out infinite'
 			}
 		}
 	},
